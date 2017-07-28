@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TiendaEnLinea.Models.Item>
+
+@{
+    ViewBag.Title = "Inventario";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo articulo", "Create")
+</p>
+<table class="table">
+    
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.categoria.Nombre)
+            de la categoria
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producer.Nombre)
+            del productor
+        </th>
+        <th>
+           @Html.DisplayNameFor(model => model.Nombre)
+            del item
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+            
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoria.Nombre)
+        </td>
+        <th>
+            @Html.DisplayFor(modelItem => item.producer.Nombre)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ProductoID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.ProductoID }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.ProductoID })
+        </td>
+    </tr>
+}
+
+</table>

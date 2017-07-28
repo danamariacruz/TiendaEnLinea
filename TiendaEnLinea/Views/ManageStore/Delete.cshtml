@@ -1,0 +1,55 @@
+﻿@model TiendaEnLinea.Models.Item
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar Articulo</h2>
+
+<h3>Esta seguro que quiere borrar este articulo?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.categoria.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producer.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producer.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volaver a la lista", "Index")
+        </div>
+    }
+</div>

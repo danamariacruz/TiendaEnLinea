@@ -1,0 +1,15 @@
+﻿@model IEnumerable<TiendaEnLinea.Models.Categorias>
+
+@{
+    ViewBag.Title = "Bienvenido";
+}
+
+<h2>Categorias: @Model.Count()</h2>
+
+
+<ul>
+    @foreach (var Categorias in Model)
+    {
+        <li>@Html.ActionLink(Categorias.Nombre, "Buscar", new { categoria = Categorias.Nombre })</li>
+    }
+</ul>
